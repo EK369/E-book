@@ -1,0 +1,36 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: transparent;
+    border-bottom: 1px solid white; 
+}
+
+.menu-list ul {
+    display: flex;
+    font-size: 21px;
+    gap: 75px;
+    list-style-type: none;
+    padding-right: 0;
+    margin: 0;
+}
+
+.menu-list ul li a,  ul li a {
+    text-decoration: none;
+    color: white;
+}
+
