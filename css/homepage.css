@@ -34,3 +34,118 @@ body {
     color: white;
 }
 
+.hero {
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content .glitch {
+    font-size: 48px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.hero-content .glitch::before,
+.hero-content .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 1000px, 0, 0);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.hero-content .glitch::before {
+    left: -2px;
+    text-shadow: -2px 0 red;
+    animation: glitch 3s infinite linear alternate-reverse;
+}
+
+.hero-content .text-block p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.hero-content .text-block .highlight {
+    color: #ffa500; /* Orange color for highlights */
+    font-weight: bold;
+}
+
+.hero-content .btn {
+    background-color: #ffa500;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+@keyframes glitch {
+    0% {
+        clip: rect(82px, 9999px, 52px, 0);
+    }
+    5%, 7%, 9%, 11%, 25%, 27%, 29%, 31%, 45%, 47%, 49%, 51%, 65%, 67%, 69%, 71%, 85%, 87%, 89%, 91% {
+        clip: rect(11px, 9999px, 88px, 0);
+    }
+    6%, 8%, 10%, 12%, 26%, 28%, 30%, 32%, 46%, 48%, 50%, 52%, 66%, 68%, 70%, 72%, 86%, 88%, 90%, 92% {
+        clip: rect(32px, 9999px, 3px, 0);
+    }
+    95%, 97%, 99%, 100% {
+        clip: rect(3px, 9999px, 47px, 0);
+    }
+}
+
+.about {
+    background-color: transparent;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Footer Section Styles */
+.footer {
+    background-color: transparent;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+.social-icons a:hover {
+    color: #45a049;
+}
