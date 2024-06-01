@@ -4,7 +4,7 @@ const books = [
         author: "Author 1",
         published: "2020",
         pages: 300,
-        cover: "/img/harryPotter.jpg",
+        cover: "https://m.media-amazon.com/images/I/81AEtzeQ-cL._SL1500_.jpg",
         description: "This is a description of Book 1."
     },
     {
@@ -12,7 +12,7 @@ const books = [
         author: "Author 2",
         published: "2018",
         pages: 250,
-        cover: "/img/Designer1.jpeg",
+        cover: "https://www.gutenberg.org/cache/epub/73671/images/cover_small.jpg",
         description: "This is a description of Book 2."
     },
     {
@@ -20,7 +20,7 @@ const books = [
         author: "Author 3",
         published: "2019",
         pages: 400,
-        cover: "/img/harryPotter.jpg",
+        cover: "https://www.gutenberg.org/cache/epub/25420/images/cover.jpg",
         description: "This is a description of Book 3."
     },
     {
@@ -28,31 +28,15 @@ const books = [
         author: "Author 4",
         published: "2021",
         pages: 350,
-        cover: "/img/harryPotter.jpg",
+        cover: "https://www.gutenberg.org/cache/epub/34701/images/illo005.jpg",
         description: "This is a description of Book 4."
     },
     {
-        name: "Book 3",
-        author: "Author 3",
+        name: "Book 5",
+        author: "Author 5",
         published: "2019",
         pages: 400,
-        cover: "/img/harryPotter.jpg",
-        description: "This is a description of Book 3."
-    },
-    {
-        name: "Book 3",
-        author: "Author 3",
-        published: "2019",
-        pages: 400,
-        cover: "/img/harryPotter.jpg",
-        description: "This is a description of Book 3."
-    },
-    {
-        name: "Book 3",
-        author: "Author 3",
-        published: "2019",
-        pages: 400,
-        cover: "/img/harryPotter.jpg",
+        cover: "https://www.gutenberg.org/cache/epub/37660/images/img01_cover.jpg",
         description: "This is a description of Book 3."
     },
 ];
