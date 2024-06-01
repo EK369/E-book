@@ -87,40 +87,75 @@
           </div>
       </div>
       <div class="button">
-          <button class="prev"><</button>
+          <button class="prev"></button>
           <button class="next">></button>
       </div>
   </div>
 
+  <div class="content-section">
+    <h2>You Can Find Everything You Need Here</h2>
+    <p>Explore a vast collection of e-books from various genres including fiction, non-fiction, science, history, and more. Whether you are looking for classic literature or the latest bestsellers, we have something for every reader.</p>
+    
+    <div class="features">
+        <div class="feature-item">
+            <img src="/img/BookCollection.png" alt="Extensive Collection">
+            <h3>Extensive Collection</h3>
+            <p>Browse through our extensive library of e-books, covering a wide range of topics and genres. From timeless classics to modern bestsellers, we have it all.</p>
+        </div>
+        <div class="feature-item">
+            <img src="/img/BookC2.png" alt="Community Reviews">
+            <h3>Community Reviews</h3>
+            <p>Read reviews from our community of readers to help you decide on your next great read. Share your own reviews and connect with other book enthusiasts.</p>
+        </div>
+        <div class="feature-item">
+            <img src="/img/ReadAnywhere.png" alt="Read Anywhere">
+            <h3>Read Anywhere</h3>
+            <p>Our e-books are compatible with a variety of devices, allowing you to enjoy your favorite books anytime, anywhere. Download your books and read offline at your convenience.</p>
+        </div>
+    </div>
 
-  <div>
-
-   Qetu shto qka te dush ti
-
+    <div class="cta">
+        <a href="books.html" class="cta-button">Browse Books</a>
+        <a href="about.html" class="cta-button">Learn More About Us</a>
+    </div>
   </div>
 
+  <div style="color: #fff; margin-top: 400px; text-align: center; margin-bottom: 100px; font-size:30px; ">Newest Books Added To Our Collection</div>
+  <div class="content2">
+
+
+    <div class="left-div">
+        <div class="book-list" id="bookList">
+            <!-- Book list items will be dynamically inserted here -->
+        </div>
+    </div>
+    <div class="right-div">
+        <div class="book-display" id="bookDisplay">
+            <!-- The details of the first book will be displayed here by default -->
+        </div>
+    </div>
+</div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ <div class="collection-section">
+    <div class="collection-text">
+        <canvas id="canvas-animation"></canvas>
+        <h2>Explore Our Collection</h2>
+        <p>Discover a diverse range of e-books meticulously curated for your reading pleasure. From classic literature to contemporary masterpieces, there's something for everyone.</p>
+        <a href="books.html" class="cta-button" style="width:200px; height:45px;margin-left: 0; text-align: center; display: flex; align-items: center; justify-content: center; margin-top:10px;">Browse Books</a>
+    </div>
+    <div class="collection-image">
+        <img src="/img/BookCollection.png" alt="Book Collection">
+    </div>
+</div>
 
 
 
 
 
   <script type="text/javascript" src="js/animation.js"></script>
+  <script type="text/javascript" src="js/homePage.js"></script>
   <script>
       let next = document.querySelector('.next');
       let prev = document.querySelector('.prev');
