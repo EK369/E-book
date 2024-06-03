@@ -8,7 +8,7 @@
    
    // Configuration, Play with these
    var config = {
-     particleNumber: 800,
+     particleNumber: 500,
      maxParticleSize: 10,
      maxSpeed: 40,
      colorVariation: 50 };
