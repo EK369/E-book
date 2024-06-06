@@ -16,7 +16,8 @@
                 <ul>
                     <li><a href="homePage.html">Home</a></li>
                     <li><a href="books.html">Books</a></li>
-                    <li><a href="#">About</a></li>
+                
+                    <li><a href="BooksContent.html">Discover</a></li>
                 </ul>
             </div>
         </div>
@@ -188,12 +189,12 @@
 
         // Create an array to hold the bubbles
         const bubbles = [];
-        const bubbleCount = 50;
+        const bubbleCount = 10;
 
         // Create bubbles and add them to the stage
         for (let i = 0; i < bubbleCount; i++) {
             const bubble = new PIXI.Graphics();
-            const radius = 20 + Math.random() * 30;
+            const radius = 20 + Math.random() * 5;
             const color = 0xffffff;
             const alpha = 0.5 + Math.random() * 0.5;
 
