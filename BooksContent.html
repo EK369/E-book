@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.2/pixi.min.js"></script>
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/bookscontent.css">
+ 
+</head>
+<body>
+
+<header class="header">
+    <div class="navbar-div">
+        <div class="menu-list">
+            <ul>
+                <li><a href="homePage.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="content-section">
+    <div class="left-div">
+        <!-- Image Div -->
+        <img src="/img/DiscoverBook.png" alt="Discover Book">
+    </div>
+    <div class="right-div">
+        <!-- List Div -->
+        <h2>Top rated books of 2024</h2>
+        <ul>
+            <li><a href="#">The Great Escape by David Stevenson</a></li>
+            <li><a href="#">The Sea of Tranquility by Emily St. John Mandel</a></li>
+            <li><a href="#">Empire of the Vampire by Jay Kristoff</a></li>
+            <li><a href="#">The Last Graduate by Naomi Novik</a></li>
+            <li><a href="#">These Hollow Vows by Lexi Ryan</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div class="featured-author-section">
+   
+    <div class="left-div">
+        <!-- Image Div -->
+        <img src="/img/theinstitute.webp" alt="Featured Author">
+    </div>
+    <div class="right-div">
+        <!-- Author Info Div -->
+        <h2>Featured Author</h2>
+        <h3>The Institute</h3>
+        <p>Stephen King</p>
+        <p>Stephen King returns with a thrilling novel about a group of kids with special talents who are abducted and subjected to cruel experiments.</p>
+        <p>Release Date: September 10, 2019</p>
+        <!-- Add more info as needed -->
+    </div>
+</div>
+
+
+
+<div class="related-books-section">
+    <h1  style="color:#fff">Tv Show Into Book</h1>
+    <div class="main-container">
+        <div class="book-container">
+            <img src="https://imgs.search.brave.com/PX82J4oe41XGtE8-0g07nKMnkGL_zJX8CrnrGU72Ni4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzgxR2RNcWxhMGNM/LmpwZw" alt="Book 1">
+            <a href="#" class="read-now-btn">Read Now</a>
+        </div>
+        <div class="book-container">
+            <img src="https://imgs.search.brave.com/ln1cUMunZ-LKbCOTJvN25ThA-yNcet5PxvCO-KLj28k/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJiYXQuY29t/L2ltZy84MjQ4MDAt/bmV0ZmxpeC1kYXJr/LXdhbGxwYXBlci1u/ZXRmbGl4LWZpbG1l/cy1lLXNlcmllcy13/YWxscGFwZXItZGUt/ZmlsbWVzLXNlcmll/cy1lLWZpbG1lcy5q/cGc" alt="Book 2">
+            <a href="#" class="read-now-btn">Read Now</a>
+        </div>
+        <div class="book-container">
+            <img src="/img/PB.webp" alt="Book 3">
+            <a href="#" class="read-now-btn">Read Now</a>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="footer-content" style="margin-bottom: 100px;">
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 E-Book Universe. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+<!-- PixiJS canvas -->
+<canvas id="pixiCanvas"></canvas>
+
+<script>
+    // Create the PixiJS application
+    const app = new PIXI.Application({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        transparent: true,
+        background: 0X000
+    });
+    // Set the canvas id and append it to the body
+    app.view.id = 'pixiCanvas';
+    document.body.appendChild(app.view);
+
+    // Create a texture for the stationary star sprite
+    const stationaryTexture = PIXI.Texture.from('https://pixijs.io/examples/examples/assets/star.png');
+    const rotatingTexture = PIXI.Texture.from('https://pixijs.io/examples/examples/assets/star.png');
+
+    // Create the stationary star sprite
+    const stationaryStar = new PIXI.Sprite(stationaryTexture);
+    stationaryStar.anchor.set(0.5);
+    stationaryStar.scale.set(0.5); // Decreased the scale to make it smaller
+    stationaryStar.x = app.screen.width * 0.2; // 20% from the left
+    stationaryStar.y = app.screen.height * 0.2; // 20% from the top
+
+    // Create the rotating star sprite
+    const rotatingStar = new PIXI.Sprite(rotatingTexture);
+    rotatingStar.anchor.set(0.5);
+    rotatingStar.scale.set(0.09); // Decreased the scale to make it smaller
+    rotatingStar.orbitRadius = 80; // Orbit radius in pixels
+    rotatingStar.rotationSpeed = 0.01; // Rotation speed in radians per frame
+
+    // Add stars to the stage
+    app.stage.addChild(stationaryStar);
+    app.stage.addChild(rotatingStar);
+
+    // Animation loop for rotation
+    app.ticker.add(() => {
+        // Update rotating star position relative to stationary star
+        rotatingStar.x = stationaryStar.x + rotatingStar.orbitRadius * Math.cos(rotatingStar.rotation);
+        rotatingStar.y = stationaryStar.y + rotatingStar.orbitRadius * Math.sin(rotatingStar.rotation);
+        rotatingStar.rotation += rotatingStar.rotationSpeed;
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        app.renderer.resize(window.innerWidth, window.innerHeight);
+    });
+</script>
+
+</body>
+</html>
